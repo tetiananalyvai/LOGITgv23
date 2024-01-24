@@ -391,7 +391,7 @@
 #     else:
 #         return False  # Kui sugu ei ole "mees" ega "naine"
 
-# def main():
+# def main(): #komment
 #     # Küsi kandideerija sugu
 #     sugu = input("Sisesta oma sugu (mees/naine): ")
 
