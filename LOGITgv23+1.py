@@ -1,23 +1,23 @@
 ﻿
-from datetime import *
-from random import *
+# from datetime import *
+# from random import *
 
-arve_nr= date.today()#datetime.now()
-tsekk="Arve: "+str(arve_nr)+"\nToode Hind Kogus Summa\n"
-summa=0
+# arve_nr= date.today()#datetime.now()
+# tsekk="Arve: "+str(arve_nr)+"\nToode Hind Kogus Summa\n"
+# summa=0
 
-tooded=["Piim","Leib","Kommid"]
-for i in range(len(tooded)):
-    toode=tooded[i]
-    hind=randint(50,150)/100
-    v=input("Toode:"+toode+" Hind:"+str(hind)+"\nKas tahat osta?").lower()
-    if v=="jah":
-        mitu=int(input("Mitu"))
-        tsekk+=toode+"  "+str(hind)+"  "+str(mitu)+"  "+str(mitu*hind)+"\n"
-        summa+=mitu*hind
+# tooded=["Piim","Leib","Kommid"]
+# for i in range(len(tooded)):
+#     toode=tooded[i]
+#     hind=randint(50,150)/100
+#     v=input("Toode:"+toode+" Hind:"+str(hind)+"\nKas tahat osta?").lower()
+#     if v=="jah":
+#         mitu=int(input("Mitu"))
+#         tsekk+=toode+"  "+str(hind)+"  "+str(mitu)+"  "+str(mitu*hind)+"\n"
+#         summa+=mitu*hind
         
-tsekk+="Kokku maksta: "+str(summa)
-print(tsekk)
+# tsekk+="Kokku maksta: "+str(summa)
+# print(tsekk)
 
 
 #Ülesanne 1
@@ -88,5 +88,16 @@ print(tsekk)
 # for i in range(1,11):
 #     for j in range(1,11): 
 #         print(f"0",end="")
-#     print()
-    
+#     print()       
+
+    count_integer_numbers = 0
+
+for i in range(15):
+    try:
+        number = float(input(f"Введите число {i + 1}: "))
+        if number.is_integer():
+            count_integer_numbers += 1
+    except ValueError:
+        print("Ошибка ввода. Пожалуйста, введите число.")
+
+print(f"Среди введенных чисел {count_integer_numbers} целых.")
