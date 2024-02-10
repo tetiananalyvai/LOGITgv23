@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>3aa3fcde-f384-4692-af22-2b116a9fc24a</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>LOGITgv23++1.py</StartupFile>
+    <StartupFile>matemLOGITgv23.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -27,6 +27,9 @@
     </Compile>
     <Compile Include="LOGITgv23+1.py" />
     <Compile Include="LOGITgv23.py" />
+    <Compile Include="matemLOGITgv23.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
