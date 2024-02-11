@@ -1,150 +1,73 @@
 ﻿
-# from datetime import *
-# from random import *
+#1
+import random
 
-# arve_nr= date.today()#datetime.now()
-# tsekk="Arve: "+str(arve_nr)+"\nToode Hind Kogus Summa\n"
-# summa=0
+print("Tere tulemast matemaatika testi!")
 
-# tooded=["Piim","Leib","Kommid"]
-# for i in range(len(tooded)):
-#     toode=tooded[i]
-#     hind=randint(50,150)/100
-#     v=input("Toode:"+toode+" Hind:"+str(hind)+"\nKas tahat osta?").lower()
-#     if v=="jah":
-#         mitu=int(input("Mitu"))
-#         tsekk+=toode+"  "+str(hind)+"  "+str(mitu)+"  "+str(mitu*hind)+"\n"
-#         summa+=mitu*hind
-        
-# tsekk+="Kokku maksta: "+str(summa)
-# print(tsekk)
+raskused = int(input("Valige raskusaste (1, 2 või 3): "))
+num_küsimused = int(input("Mitu ülesannet soovite lahendada? "))
+õiged_vastused = 0
 
+for _ in range(num_küsimused):
+    operatsioonid = ['+', '-', '*', '/', '**']
+    operatsiooni = random.valik(operatsioonid[:raskused])
+    num1 = random.randint(1, 10 ** raskused)
+    num2 = random.randint(1, 10 ** raskused)
 
-#Ülesanne 1
-# nimi=input("Palun sisesta oma nimi:")
-# mitu=int(input("Mitu korda tervitada? "))
-# for i in range(mitu):
-#     print(f"Oletervitatud, {nimi}, {i+1}. korda.")
+    if operatsiooni == '/':
+        while num1 % num2 != 0: 
+            num1 = random.randint(1, 10 ** raskused)
+            num2 = random.randint(1, 10 ** raskused)
+
+    küsimus = (f"Mis on {num1} {operatsiooni} {num2}? ")
+    vastus = float(input(küsimus))
+
+    if operatsiooni == '+':
+        õige_vastus = num1 + num2
+    elif operatsiooni == '-':
+        õige_vastus = num1 - num2
+    elif operatsiooni == '*':
+        õige_vastus = num1 * num2
+    elif operatsiooni == '/':
+        õige_vastus = num1 / num2
+    elif operatsiooni == '**':
+        õige_vastus = num1 ** num2
+
+    if abs(vastus - õiged_vastused) < 0.001:  
+        print("Õige!")
+        õiged_vastused += 1
+    else:
+        print("Vale.")
+
+tulemus = (õiged_vastused / num_küsimused) * 100
+print(f"Sinu tulemus: {tulemus:.2f}%")
+if tulemus < 60:
+    print("Hinne 2")
+elif tulemus < 75:
+    print("Hinne 3")
+elif tulemus < 90:
+    print("Hinne 4")
+else:
+    print("Hinne 5")
     
-#Ulesanne 2
-# for i in range(10):
-#     arv=int(input("Sisesta arv: "))
-#     sum_+=arv
-# print("Summa= {sum_}")
 
-#Ulesanne 2.1
-# sum_=0
-# i=0
-# while True:
-#     i+=1
-#     arv=int(input("Sisesta arv: "))
-#     if i i>10: break 
-#     if arv==777: break 
-#     sum_+=arv
-# print(f"Summa= {sum_}")
 
-#Ulesanne 2.2 sone "q" lopeb tsukkel
-# sum_=0
-# i=0
-# while True:
-#     i+=1
-#     arv=input("2.2 Sisesta arv: ")
-#     if i>10: break 
-#     try:
-#         arv=int(arv)
-#         sum_+=arv
-#     except:
-#         break 
-# if sum_!=0:
-#     print(f"Summa= {sum_}")
-    
-#Ulesanne 3
-# k=0
-# while True:
-#     k+=1
-#     print(f"{k}. ülesanne")
-#     a=randint(1,50)
-#     b=randint(1,50)
-#     p=5
-#     while True:
-#         v=int(input(f"{a}+{b}= "))
-#         p-=1
-#         if v==a+b:
-#             print("Õige vastus!")
-#             break 
-#         elif p==0:
-#             print(f"{a}+{b}={a+b}")
-#             break 
-#         if k==10: break
+#2 list muuta
+nimed = []
+for i in range(5):
+    nimi = input("Sisesta nimi: ")
+    nimed.append(nimi)
+print("Sisestatud: ",nimed)
+nimed.sort()
+print("Sorteeritud: ",nimed)
+print("Vimasena oli lisatud:", nimed)
+nimi=str(input("Mis nimi on vaja asendada? "))#!!!kodus
+indeks=nimed.indeks(nimi)
+uus_nimi=input("Uus nimi: ")
+nimed[indeks]=uus_nimi
+nimed=[uus_nimi if vana_nimi==nimi else vana_nimi for vana_nimi in nimed]
+nimed=list(set(nimed))#!!!kodus
+print(nimed)
 
-#Ulesanne 4
-
-# for i in range(1,11):
-#     for j in range(1,11):
-         
-#          print(f"{i}*{j}={i*j}")
-
-#Ulesanne 5
-# for i in range(1,11):
-#     for j in range(1,11): 
-#         print(f"0",end="")
-#     print()       
-
-# print("*** ИГРЫ С ЧИСЛАМИ ***")
-# print()
-# #'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-# while 1:
-#     try:
-#         a = abs(int(input("Введите целое число => ")))
-#         break
-#     except ValueError:
-#         print("Это не целое число")
-# #'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-# if a==0:
-#     print("Нет смысла ничего делать с нулём")
-# else:
-# #'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-#     print("Определяем, сколько в числе чётных и сколько нечётных цифр")
-#     print()
-#     c=a
-#     b=a
-#     paaris=0
-#     paaritu=0
-#     while b>0:
-#         if b%2==0:
-#             paaris=+1    
-#         else:
-#             paaritu=+1
-#         b=b//10
-    
-#     print("Чётных цифр:" +str(paaris))
-#     print("Нечётных цифр:" +str(paaritu))
-#     print()
-# #''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-#     print("*Переворачиваем* введённое число")
-#     print()
-#     b=0
-#     while a>0:
-#         number=a%10
-#         a=a//10
-#         b=b*10
-#         b+=number
-#     print("*Перевёрнутое* число", b)
-#     print()
-# #''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-#     print("Проверяем гипотезу Сиракуз")
-#     print()
-#     if c%2==0:
-#         print(f"{c} - чётное число. Делим на 2.")
-#     else:
-#         print(f"{c} - нечётное число. Умножаем на 3, прибавляем 1 и делим на 2.")
-#     while c!=1:
-#             if c%2==0:
-#                  c=c/2
-#             else:
-#                  c=(3*c+1)/2
-#             print(c, end="\t")
-#     print()
-#     print("Гипотеза верна")
 
         
