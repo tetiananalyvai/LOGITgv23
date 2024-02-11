@@ -51,7 +51,7 @@ else:
 
 
 
-#2 list
+#2 list muuta
 nimed = []
 for i in range(5):
     nimi = input("Sisesta nimi: ")
